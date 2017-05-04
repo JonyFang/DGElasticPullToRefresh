@@ -17,9 +17,9 @@
 		05CD14701BBE8FEA00AF4030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05CD146F1BBE8FEA00AF4030 /* Assets.xcassets */; };
 		05CD14731BBE8FEA00AF4030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05CD14711BBE8FEA00AF4030 /* LaunchScreen.storyboard */; };
 		05FAB8BE1BBEF115004922F1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB8BD1BBEF115004922F1 /* NavigationController.swift */; };
-		D30499451EBB60CC0030D075 /* Associated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30499421EBB60CC0030D075 /* Associated.swift */; };
-		D30499461EBB60CC0030D075 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30499431EBB60CC0030D075 /* Haptic.swift */; };
-		D30499471EBB60CC0030D075 /* Hapticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30499441EBB60CC0030D075 /* Hapticable.swift */; };
+		D304994B1EBB61460030D075 /* Associated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30499481EBB61460030D075 /* Associated.swift */; };
+		D304994C1EBB61460030D075 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30499491EBB61460030D075 /* Haptic.swift */; };
+		D304994D1EBB61460030D075 /* Hapticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304994A1EBB61460030D075 /* Hapticable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 		05CD14721BBE8FEA00AF4030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05CD14741BBE8FEA00AF4030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05FAB8BD1BBEF115004922F1 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		D30499421EBB60CC0030D075 /* Associated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Associated.swift; sourceTree = "<group>"; };
-		D30499431EBB60CC0030D075 /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
-		D30499441EBB60CC0030D075 /* Hapticable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hapticable.swift; sourceTree = "<group>"; };
+		D30499481EBB61460030D075 /* Associated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Associated.swift; sourceTree = "<group>"; };
+		D30499491EBB61460030D075 /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		D304994A1EBB61460030D075 /* Hapticable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hapticable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +54,14 @@
 		05B92F861BD25E7B006D60FB /* DGElasticPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				D30499411EBB60CC0030D075 /* HapticaGenerator */,
 				05B92F871BD25E7B006D60FB /* DGElasticPullToRefreshConstants.swift */,
 				05B92F881BD25E7B006D60FB /* DGElasticPullToRefreshExtensions.swift */,
 				05B92F891BD25E7B006D60FB /* DGElasticPullToRefreshLoadingView.swift */,
 				05B92F8A1BD25E7B006D60FB /* DGElasticPullToRefreshLoadingViewCircle.swift */,
 				05B92F8B1BD25E7B006D60FB /* DGElasticPullToRefreshView.swift */,
+				D30499481EBB61460030D075 /* Associated.swift */,
+				D30499491EBB61460030D075 /* Haptic.swift */,
+				D304994A1EBB61460030D075 /* Hapticable.swift */,
 			);
 			path = DGElasticPullToRefresh;
 			sourceTree = SOURCE_ROOT;
@@ -92,16 +94,6 @@
 				05CD14741BBE8FEA00AF4030 /* Info.plist */,
 			);
 			path = DGElasticPullToRefreshExample;
-			sourceTree = "<group>";
-		};
-		D30499411EBB60CC0030D075 /* HapticaGenerator */ = {
-			isa = PBXGroup;
-			children = (
-				D30499421EBB60CC0030D075 /* Associated.swift */,
-				D30499431EBB60CC0030D075 /* Haptic.swift */,
-				D30499441EBB60CC0030D075 /* Hapticable.swift */,
-			);
-			path = HapticaGenerator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,15 +168,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B92F8C1BD25E7B006D60FB /* DGElasticPullToRefreshConstants.swift in Sources */,
-				D30499471EBB60CC0030D075 /* Hapticable.swift in Sources */,
+				D304994D1EBB61460030D075 /* Hapticable.swift in Sources */,
 				05CD146B1BBE8FEA00AF4030 /* ViewController.swift in Sources */,
 				05B92F901BD25E7B006D60FB /* DGElasticPullToRefreshView.swift in Sources */,
 				05B92F8E1BD25E7B006D60FB /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				05FAB8BE1BBEF115004922F1 /* NavigationController.swift in Sources */,
 				05B92F8F1BD25E7B006D60FB /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */,
-				D30499461EBB60CC0030D075 /* Haptic.swift in Sources */,
+				D304994C1EBB61460030D075 /* Haptic.swift in Sources */,
 				05CD14691BBE8FEA00AF4030 /* AppDelegate.swift in Sources */,
-				D30499451EBB60CC0030D075 /* Associated.swift in Sources */,
+				D304994B1EBB61460030D075 /* Associated.swift in Sources */,
 				05B92F8D1BD25E7B006D60FB /* DGElasticPullToRefreshExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
