@@ -17,17 +17,29 @@ public enum Haptic {
     public func generate() {
         switch self {
         case .impact(let style):
-            let generator = UIImpactFeedbackGenerator(style: style)
-            generator.prepare()
-            generator.impactOccurred()
+            if #available(iOS 10.0, *) {
+                let generator = UIImpactFeedbackGenerator(style: style)
+                generator.prepare()
+                generator.impactOccurred()
+            } else {
+                // Fallback on earlier versions
+            }
         case .notification(let type):
-            let generator = UINotificationFeedbackGenerator()
-            generator.prepare()
-            generator.notificationOccurred(type)
+            if #available(iOS 10.0, *) {
+                let generator = UINotificationFeedbackGenerator()
+                generator.prepare()
+                generator.notificationOccurred(type)
+            } else {
+                // Fallback on earlier versions
+            }
         case .selection:
-            let generator = UISelectionFeedbackGenerator()
-            generator.prepare()
-            generator.selectionChanged()
+            if #available(iOS 10.0, *) {
+                let generator = UISelectionFeedbackGenerator()
+                generator.prepare()
+                generator.selectionChanged()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }
