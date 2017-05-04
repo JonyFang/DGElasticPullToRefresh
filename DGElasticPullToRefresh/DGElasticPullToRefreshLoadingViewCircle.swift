@@ -51,6 +51,8 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
     
     fileprivate let kRotationAnimation = "kRotationAnimation"
     
+    fileprivate var isLoading = false
+    
     fileprivate let shapeLayer = CAShapeLayer()
     fileprivate lazy var identityTransform: CATransform3D = {
         var transform = CATransform3DIdentity
@@ -86,7 +88,10 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
         shapeLayer.strokeEnd = min(0.9 * progress, 0.9)
         
         if progress > 1.0 {
-            Haptic.impact(.medium).generate()
+            if !isLoading {
+                Haptic.impact(.medium).generate()
+                isLoading = true
+            }
             let degrees = ((progress - 1.0) * 200.0)
             shapeLayer.transform = CATransform3DRotate(identityTransform, degrees.toRadians(), 0.0, 0.0, 1.0)
         } else {
@@ -110,6 +115,7 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
     
     override open func stopLoading() {
         super.stopLoading()
+        isLoading = false
         
         shapeLayer.removeAnimation(forKey: kRotationAnimation)
     }
