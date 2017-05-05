@@ -48,7 +48,6 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
     
     // MARK: -
     // MARK: Vars
-    
     fileprivate let kRotationAnimation = "kRotationAnimation"
     
     fileprivate var isLoading = false
@@ -67,7 +66,7 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
     public override init() {
         super.init(frame: .zero)
         
-        shapeLayer.lineWidth = 1.0
+        shapeLayer.lineWidth = 2.6
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = tintColor.cgColor
         shapeLayer.actions = ["strokeEnd" : NSNull(), "transform" : NSNull()]
@@ -85,7 +84,7 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
     override open func setPullProgress(_ progress: CGFloat) {
         super.setPullProgress(progress)
         
-        shapeLayer.strokeEnd = min(0.9 * progress, 0.9)
+        shapeLayer.strokeEnd = min(0.96 * progress, 0.96)
         
         if progress > 1.0 {
             if !isLoading {
