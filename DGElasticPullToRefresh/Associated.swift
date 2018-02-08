@@ -30,3 +30,4 @@ extension Associable where Self: AnyObject {
 }
 
 extension NSObject: Associable {}
+

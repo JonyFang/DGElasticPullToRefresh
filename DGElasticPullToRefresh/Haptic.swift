@@ -15,31 +15,22 @@ public enum Haptic {
     
     // trigger
     public func generate() {
+        guard #available(iOS 10, *) else { return }
+        
         switch self {
         case .impact(let style):
-            if #available(iOS 10.0, *) {
-                let generator = UIImpactFeedbackGenerator(style: style)
-                generator.prepare()
-                generator.impactOccurred()
-            } else {
-                // Fallback on earlier versions
-            }
+            let generator = UIImpactFeedbackGenerator(style: style)
+            generator.prepare()
+            generator.impactOccurred()
         case .notification(let type):
-            if #available(iOS 10.0, *) {
-                let generator = UINotificationFeedbackGenerator()
-                generator.prepare()
-                generator.notificationOccurred(type)
-            } else {
-                // Fallback on earlier versions
-            }
+            let generator = UINotificationFeedbackGenerator()
+            generator.prepare()
+            generator.notificationOccurred(type)
         case .selection:
-            if #available(iOS 10.0, *) {
-                let generator = UISelectionFeedbackGenerator()
-                generator.prepare()
-                generator.selectionChanged()
-            } else {
-                // Fallback on earlier versions
-            }
+            let generator = UISelectionFeedbackGenerator()
+            generator.prepare()
+            generator.selectionChanged()
         }
     }
 }
+
